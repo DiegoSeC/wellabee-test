@@ -1,8 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wellabee
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Then run the dev server
 
 ```bash
 npm run dev
@@ -12,23 +20,15 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## FAQ
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Are you using redux for this project?** Using Redux for this small app would be overwhelming; instead, I'm using the context API to communicate between components. As you can see here, first, I created a context provider as a functional component; then, I use this component as my root component.
+- **What frameworks or libraries did you implement in this project?** The libraries and framework I'm using are:
+  - NextJS to handle the backend side
+  - React.
+  - StyledComponent for my CSS Style.
+  - SWR to call my API.
+- **Is this an SSR application?** Kind of, I'm sending the user's info when the page is loading, and that's all. Then, I'm using SWR to call the other endpoints of the app, as activities and drives, to simulate a standard app.
+- **Are you using a database?** Unfortunately, I could not use one, just for lack of time. As mentioned in the document, I wanted to keep this test to only use one day of work. But I've created some interfaces that simulate how I would make my entities in the database.
+- **Why are you using StyledComponent?** I think StyledComponent is the best approach because it lets me reuse my component outside this project (if that needs it) and enables me to encapsulate the styles and avoid conflicts with other elements.
+- **Where should I start?** The first file you should look at is the index file located on `page/index.tsx`, and for the API, you should look inside of `page/api`
